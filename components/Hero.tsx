@@ -1,9 +1,39 @@
-import React from 'react'
+'use client';
+
+import React from 'react';
+import CustomButton from './CustomButton';
+import Image from 'next/image';
 
 const Hero = () => {
+  const handleScroll = () => {};
   return (
-    <div>Hero</div>
-  )
-}
+    <div className="hero">
+      <div className="flex-1 pt-36 padding-x">
+        <h1 className="hero__title">
+          Find, Book, or Rent a Car - Quickly and Easily
+        </h1>
 
-export default Hero
+        <p className="hero__subtitle">
+          Streamline your car rental experience with our effortless booking
+          process
+        </p>
+
+        <CustomButton
+          title="Explore Cars"
+          containerStyles="bg-primary-blue text-white rounded-full mt-10"
+          handleClick={handleScroll}
+        />
+      </div>
+
+      <div className="hero__image-container">
+        <div className="hero__image">
+          <Image src='/hero.png' alt='hero Image' fill className='object-contain' />
+
+          <div className="hero__image-overlay" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
